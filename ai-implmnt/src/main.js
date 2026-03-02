@@ -11,6 +11,13 @@ import './styles/components.css';
 import './styles/sections.css';
 import './styles/responsive.css';
 
+// ── Vercel Speed Insights & Analytics ──
+import { injectSpeedInsights } from '@vercel/speed-insights';
+import { inject } from '@vercel/analytics';
+
+injectSpeedInsights();
+inject();
+
 // ── Nav scroll state ──
 const nav = document.getElementById('nav');
 
