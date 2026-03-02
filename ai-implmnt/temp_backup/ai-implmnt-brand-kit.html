@@ -1,0 +1,1445 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI·Implmnt — Brand Kit</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300;1,9..40,400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --signal: #FF4D00;
+    --signal-light: #FF8C55;
+    --jade: #00A878;
+    --jade-light: #00D49A;
+    --ink: #0F0F0D;
+    --cream: #FAF8F4;
+    --blush: #FFF0EA;
+    --mint: #E6F7F1;
+    --slate: #6B6B68;
+    --rule: #E4E0D9;
+    --morning-wash: linear-gradient(160deg, #FFF0EA 0%, #FAF8F4 55%, #E6F7F1 100%);
+    --dawn-signal: linear-gradient(135deg, #FFF0EA 0%, #FF8C55 55%, #FF4D00 100%);
+    --morning-jade: linear-gradient(160deg, #E6F7F1 0%, #00C99A 55%, #00A878 100%);
+    --deep-night: linear-gradient(135deg, #0F0F0D 0%, #1C3D30 100%);
+    --signal-warm: linear-gradient(135deg, #FF4D00, #FF8C55);
+    --jade-fresh: linear-gradient(135deg, #00A878, #00D49A);
+    --serif: 'Syne', sans-serif;
+    --sans: 'DM Sans', sans-serif;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: #E8E5E0;
+    font-family: var(--sans);
+    color: var(--ink);
+    padding: 2.5rem;
+  }
+
+  /* ── PAGE HEADER ── */
+  .page-header {
+    text-align: center;
+    margin-bottom: 3.5rem;
+  }
+
+  .page-header-eyebrow {
+    font-size: 0.68rem;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: #aaa;
+    margin-bottom: 0.5rem;
+  }
+
+  .page-header-title {
+    font-family: var(--serif);
+    font-size: 2.2rem;
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    color: var(--ink);
+    margin-bottom: 0.35rem;
+  }
+
+  .page-header-sub {
+    font-size: 0.88rem;
+    color: #888;
+  }
+
+  /* ── ASSET SECTION ── */
+  .asset-section {
+    margin-bottom: 4rem;
+  }
+
+  .asset-label-row {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .asset-number {
+    width: 28px;
+    height: 28px;
+    background: var(--ink);
+    color: var(--cream);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.68rem;
+    font-weight: 700;
+    flex-shrink: 0;
+  }
+
+  .asset-name {
+    font-family: var(--serif);
+    font-size: 1.1rem;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+  }
+
+  .asset-dims {
+    font-size: 0.7rem;
+    color: #aaa;
+    font-family: 'Courier New', monospace;
+    margin-left: auto;
+  }
+
+  .asset-wrap {
+    background: #ccc;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 4px 32px rgba(0,0,0,0.12), 0 1px 4px rgba(0,0,0,0.06);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+  }
+
+  .asset-wrap.dark-bg { background: #555; }
+  .asset-wrap.light-bg { background: #f0ede8; }
+
+  .asset-usage {
+    margin-top: 0.75rem;
+    font-size: 0.78rem;
+    color: #888;
+    line-height: 1.6;
+  }
+
+  /* ════════════════════════════
+     LOGO COMPONENT (reusable)
+  ════════════════════════════ */
+  .logo {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+  }
+
+  .logo-mark svg { display: block; }
+
+  .logo-wordmark {
+    font-family: var(--serif);
+    font-weight: 700;
+    letter-spacing: -0.025em;
+    line-height: 1;
+    color: var(--ink);
+  }
+
+  .logo-wordmark .dot { color: var(--signal); }
+  .logo-wordmark.inv { color: #fff; }
+  .logo-wordmark.inv .dot { color: rgba(255,255,255,0.5); }
+
+  /* ════════════════════════════
+     1. LINKEDIN BANNER
+     2128 × 532px → display at 100% width, ratio preserved
+  ════════════════════════════ */
+  .linkedin-banner {
+    width: 100%;
+    max-width: 860px;
+    aspect-ratio: 2128 / 532;
+    background: var(--morning-wash);
+    background: linear-gradient(160deg, #FFF0EA 0%, #FAF8F4 55%, #E6F7F1 100%);
+    border-radius: 10px;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 5%;
+  }
+
+  .banner-left {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em;
+  }
+
+  .banner-logo { margin-bottom: 0.4em; }
+
+  .banner-tagline {
+    font-family: var(--serif);
+    font-size: clamp(0.65rem, 2.2vw, 1.1rem);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    color: var(--ink);
+    line-height: 1.25;
+  }
+
+  .banner-tagline em {
+    font-style: italic;
+    color: var(--signal);
+  }
+
+  .banner-sub {
+    font-size: clamp(0.5rem, 1.2vw, 0.72rem);
+    color: var(--slate);
+    font-weight: 400;
+    letter-spacing: 0.01em;
+  }
+
+  .banner-right {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 0.6em;
+  }
+
+  .banner-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4em;
+    background: rgba(255,255,255,0.7);
+    backdrop-filter: blur(6px);
+    border: 1px solid rgba(255,77,0,0.15);
+    border-radius: 100px;
+    padding: 0.3em 0.75em;
+    font-size: clamp(0.45rem, 1vw, 0.65rem);
+    font-weight: 600;
+    color: var(--ink);
+  }
+
+  .banner-pill-dot {
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+
+  .banner-node-graphic {
+    position: absolute;
+    right: 28%;
+    top: 50%;
+    transform: translateY(-50%);
+    opacity: 0.08;
+  }
+
+  /* ════════════════════════════
+     2. LINKEDIN POST (1:1)
+  ════════════════════════════ */
+  .post-square {
+    width: 480px;
+    height: 480px;
+    border-radius: 12px;
+    position: relative;
+    overflow: hidden;
+    flex-shrink: 0;
+  }
+
+  .post-sq-photo {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(15,15,13,0.0) 30%, rgba(15,15,13,0.75) 100%),
+                linear-gradient(135deg, #d4cfc8 0%, #b8b2aa 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .photo-placeholder-label {
+    font-size: 0.7rem;
+    font-weight: 500;
+    color: rgba(255,255,255,0.4);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .photo-icon {
+    width: 40px;
+    height: 40px;
+    border: 2px solid rgba(255,255,255,0.2);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .post-sq-overlay {
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    padding: 1.75rem;
+    background: linear-gradient(0deg, rgba(15,15,13,0.9) 0%, rgba(15,15,13,0.0) 100%);
+  }
+
+  .post-sq-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    background: var(--signal);
+    color: #fff;
+    font-size: 0.62rem;
+    font-weight: 700;
+    padding: 3px 9px;
+    border-radius: 4px;
+    margin-bottom: 0.6rem;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+
+  .post-sq-headline {
+    font-family: var(--serif);
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #fff;
+    line-height: 1.25;
+    letter-spacing: -0.02em;
+    margin-bottom: 1rem;
+  }
+
+  .post-sq-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .post-sq-logo {
+    font-family: var(--serif);
+    font-weight: 700;
+    font-size: 0.85rem;
+    color: rgba(255,255,255,0.9);
+    letter-spacing: -0.02em;
+  }
+
+  .post-sq-logo .dot { color: var(--signal); }
+
+  .post-sq-url {
+    font-size: 0.62rem;
+    color: rgba(255,255,255,0.4);
+  }
+
+  .post-sq-accent-bar {
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--signal), var(--signal-light), var(--jade));
+  }
+
+  /* ════════════════════════════
+     3. INSTAGRAM POST (1:1) - tip card variant
+  ════════════════════════════ */
+  .insta-post {
+    width: 480px;
+    height: 480px;
+    border-radius: 12px;
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(160deg, #FFF0EA 0%, #FAF8F4 55%, #E6F7F1 100%);
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+  }
+
+  .insta-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: auto;
+  }
+
+  .insta-logo {
+    font-family: var(--serif);
+    font-weight: 700;
+    font-size: 0.9rem;
+    color: var(--ink);
+    letter-spacing: -0.02em;
+  }
+
+  .insta-logo .dot { color: var(--signal); }
+
+  .insta-num {
+    font-family: var(--serif);
+    font-size: 4.5rem;
+    font-weight: 800;
+    line-height: 1;
+    color: var(--ink);
+    opacity: 0.06;
+    position: absolute;
+    right: 1.5rem;
+    top: 1rem;
+    letter-spacing: -0.05em;
+  }
+
+  .insta-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .insta-category {
+    font-size: 0.68rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--jade);
+    margin-bottom: 0.75rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .insta-category::before {
+    content: '';
+    width: 20px;
+    height: 2px;
+    background: var(--jade);
+    border-radius: 1px;
+  }
+
+  .insta-headline {
+    font-family: var(--serif);
+    font-size: 1.75rem;
+    font-weight: 700;
+    line-height: 1.2;
+    letter-spacing: -0.025em;
+    color: var(--ink);
+    margin-bottom: 1rem;
+  }
+
+  .insta-headline em {
+    font-style: italic;
+    color: var(--signal);
+  }
+
+  .insta-body {
+    font-size: 0.82rem;
+    color: var(--slate);
+    line-height: 1.65;
+    max-width: 34ch;
+  }
+
+  .insta-bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 1.25rem;
+    border-top: 1px solid var(--rule);
+    margin-top: 1.25rem;
+  }
+
+  .insta-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    background: var(--signal);
+    color: #fff;
+    font-size: 0.68rem;
+    font-weight: 700;
+    padding: 0.45rem 0.9rem;
+    border-radius: 6px;
+    letter-spacing: 0.02em;
+  }
+
+  .insta-url {
+    font-size: 0.65rem;
+    color: var(--slate);
+    opacity: 0.6;
+  }
+
+  .insta-node-decor {
+    position: absolute;
+    bottom: -30px;
+    right: -30px;
+    opacity: 0.06;
+  }
+
+  /* ════════════════════════════
+     4. TWITTER/X POST (16:9)
+  ════════════════════════════ */
+  .twitter-post {
+    width: 680px;
+    aspect-ratio: 16 / 9;
+    border-radius: 12px;
+    position: relative;
+    overflow: hidden;
+    flex-shrink: 0;
+  }
+
+  .twitter-photo-bg {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, #c8c3bc 0%, #a8a39c 100%);
+  }
+
+  .twitter-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg, rgba(15,15,13,0.88) 45%, rgba(15,15,13,0.2) 100%);
+  }
+
+  .twitter-content {
+    position: absolute;
+    inset: 0;
+    padding: 2rem 2.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .twitter-top {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+  }
+
+  .twitter-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    background: var(--signal);
+    color: #fff;
+    font-size: 0.6rem;
+    font-weight: 700;
+    padding: 0.25rem 0.7rem;
+    border-radius: 3px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .twitter-logo-inv {
+    font-family: var(--serif);
+    font-weight: 700;
+    font-size: 0.85rem;
+    color: rgba(255,255,255,0.7);
+    letter-spacing: -0.02em;
+  }
+
+  .twitter-logo-inv .dot { color: var(--signal); }
+
+  .twitter-mid {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 1rem 0;
+  }
+
+  .twitter-headline {
+    font-family: var(--serif);
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: #fff;
+    line-height: 1.2;
+    letter-spacing: -0.025em;
+    max-width: 16ch;
+    margin-bottom: 0.75rem;
+  }
+
+  .twitter-headline em {
+    font-style: italic;
+    color: var(--signal-light);
+  }
+
+  .twitter-sub {
+    font-size: 0.78rem;
+    color: rgba(255,255,255,0.55);
+    max-width: 36ch;
+    line-height: 1.6;
+  }
+
+  .twitter-bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .twitter-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    background: rgba(255,255,255,0.12);
+    border: 1px solid rgba(255,255,255,0.2);
+    color: rgba(255,255,255,0.85);
+    font-size: 0.68rem;
+    font-weight: 600;
+    padding: 0.4rem 1rem;
+    border-radius: 6px;
+  }
+
+  .twitter-url {
+    font-size: 0.62rem;
+    color: rgba(255,255,255,0.3);
+  }
+
+  .twitter-photo-label {
+    position: absolute;
+    right: 10%;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 0.6rem;
+    color: rgba(255,255,255,0.25);
+    text-align: center;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .twitter-photo-icon {
+    width: 36px;
+    height: 36px;
+    border: 1px solid rgba(255,255,255,0.2);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .twitter-accent-left {
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 3px;
+    background: linear-gradient(180deg, var(--signal), var(--jade));
+  }
+
+  /* ════════════════════════════
+     5. PRESENTATION COVER
+  ════════════════════════════ */
+  .pres-cover {
+    width: 680px;
+    aspect-ratio: 16 / 9;
+    border-radius: 12px;
+    position: relative;
+    overflow: hidden;
+    background: var(--deep-night);
+    background: linear-gradient(135deg, #0F0F0D 0%, #1C3D30 100%);
+    flex-shrink: 0;
+  }
+
+  .pres-grid-overlay {
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+    background-size: 40px 40px;
+  }
+
+  .pres-content {
+    position: absolute;
+    inset: 0;
+    padding: 2.5rem 3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .pres-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .pres-date {
+    font-size: 0.62rem;
+    color: rgba(255,255,255,0.25);
+    font-family: 'Courier New', monospace;
+    letter-spacing: 0.08em;
+  }
+
+  .pres-mid {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .pres-eyebrow {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+    font-size: 0.62rem;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--jade);
+  }
+
+  .pres-eyebrow::before {
+    content: '';
+    width: 20px;
+    height: 1px;
+    background: var(--jade);
+  }
+
+  .pres-title {
+    font-family: var(--serif);
+    font-size: 2rem;
+    font-weight: 800;
+    line-height: 1.1;
+    letter-spacing: -0.03em;
+    color: #fff;
+    max-width: 14ch;
+    margin-bottom: 0.75rem;
+  }
+
+  .pres-title em {
+    font-style: italic;
+    color: var(--signal-light);
+  }
+
+  .pres-subtitle {
+    font-size: 0.78rem;
+    color: rgba(255,255,255,0.45);
+    max-width: 32ch;
+    line-height: 1.6;
+  }
+
+  .pres-bottom {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+  }
+
+  .pres-presenter {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  .pres-presenter-name {
+    font-size: 0.78rem;
+    font-weight: 600;
+    color: rgba(255,255,255,0.75);
+  }
+
+  .pres-presenter-role {
+    font-size: 0.62rem;
+    color: rgba(255,255,255,0.3);
+  }
+
+  .pres-node-large {
+    position: absolute;
+    right: -60px;
+    bottom: -60px;
+    opacity: 0.07;
+  }
+
+  .pres-accent-line {
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 3px;
+    background: linear-gradient(180deg, var(--signal) 0%, var(--jade) 100%);
+  }
+
+  /* ════════════════════════════
+     6. ONE-PAGER DOCUMENT HEADER
+  ════════════════════════════ */
+  .doc-header {
+    width: 680px;
+    border-radius: 12px;
+    overflow: hidden;
+    background: #fff;
+    border: 1px solid var(--rule);
+    flex-shrink: 0;
+  }
+
+  .doc-header-top {
+    height: 5px;
+    background: linear-gradient(90deg, #FFF0EA, #FF8C55, #FF4D00 40%, #00A878 70%, #E6F7F1);
+  }
+
+  .doc-header-main {
+    padding: 2rem 2.5rem 1.75rem;
+    background: linear-gradient(160deg, #FFF0EA 0%, #FAF8F4 70%);
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+  }
+
+  .doc-header-left {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .doc-header-doc-type {
+    font-size: 0.65rem;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--jade);
+  }
+
+  .doc-header-title {
+    font-family: var(--serif);
+    font-size: 1.6rem;
+    font-weight: 800;
+    letter-spacing: -0.025em;
+    color: var(--ink);
+    line-height: 1.1;
+  }
+
+  .doc-header-meta {
+    font-size: 0.7rem;
+    color: var(--slate);
+    margin-top: 0.1rem;
+  }
+
+  .doc-header-right {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 0.4rem;
+    flex-shrink: 0;
+  }
+
+  .doc-header-logo {
+    font-family: var(--serif);
+    font-weight: 700;
+    font-size: 1rem;
+    letter-spacing: -0.02em;
+    color: var(--ink);
+  }
+
+  .doc-header-logo .dot { color: var(--signal); }
+
+  .doc-header-url {
+    font-size: 0.62rem;
+    color: var(--slate);
+    opacity: 0.5;
+  }
+
+  .doc-header-body {
+    padding: 1.5rem 2.5rem;
+    background: #fff;
+    border-top: 1px solid var(--rule);
+  }
+
+  .doc-body-rule {
+    height: 7px;
+    border-radius: 3px;
+    background: #f0ede8;
+    margin-bottom: 0.5rem;
+  }
+
+  .doc-body-rule.w100 { width: 100%; }
+  .doc-body-rule.w85 { width: 85%; }
+  .doc-body-rule.w70 { width: 70%; }
+
+  .doc-section-header {
+    height: 9px;
+    width: 45%;
+    background: linear-gradient(90deg, #e0ddd8, #f0ede8);
+    border-radius: 3px;
+    margin: 1.25rem 0 0.6rem;
+  }
+
+  .doc-cols {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin-top: 1rem;
+  }
+
+  .doc-col-block {
+    background: linear-gradient(135deg, #FFF0EA, #FAF8F4);
+    border-radius: 8px;
+    padding: 1rem;
+    border: 1px solid var(--rule);
+  }
+
+  .doc-col-label {
+    height: 7px;
+    width: 60%;
+    background: var(--signal);
+    border-radius: 2px;
+    margin-bottom: 0.5rem;
+    opacity: 0.5;
+  }
+
+  .doc-col-line {
+    height: 5px;
+    background: #e0ddd8;
+    border-radius: 2px;
+    margin-bottom: 0.35rem;
+  }
+  .doc-col-line.w90 { width: 90%; }
+  .doc-col-line.w65 { width: 65%; }
+
+  /* ════════════════════════════
+     7. EMAIL SIGNATURE
+  ════════════════════════════ */
+  .email-sig-wrap {
+    background: #f0ede8;
+    border-radius: 12px;
+    padding: 2rem;
+    max-width: 600px;
+  }
+
+  .email-sig-label {
+    font-size: 0.62rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #aaa;
+    margin-bottom: 0.75rem;
+  }
+
+  .email-sig {
+    background: #fff;
+    border: 1px solid #e8e5e0;
+    border-radius: 8px;
+    overflow: hidden;
+    max-width: 440px;
+  }
+
+  .sig-top-strip {
+    height: 4px;
+    background: linear-gradient(90deg, #FFF0EA 0%, #FF8C55 30%, #FF4D00 55%, #00A878 80%, #E6F7F1 100%);
+  }
+
+  .sig-body {
+    padding: 1.25rem 1.5rem 1rem;
+  }
+
+  .sig-name {
+    font-family: var(--serif);
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--ink);
+    letter-spacing: -0.015em;
+    margin-bottom: 0.15rem;
+  }
+
+  .sig-role {
+    font-size: 0.72rem;
+    color: var(--slate);
+    margin-bottom: 0.6rem;
+  }
+
+  .sig-contact {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.15rem 0.75rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .sig-contact a {
+    font-size: 0.7rem;
+    color: var(--signal);
+    text-decoration: none;
+    font-weight: 500;
+  }
+
+  .sig-contact span {
+    font-size: 0.7rem;
+    color: #ccc;
+  }
+
+  .sig-divider {
+    height: 1px;
+    background: var(--rule);
+    margin: 0.75rem 0;
+  }
+
+  .sig-brand-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .sig-logo-area {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+  }
+
+  .sig-logo-text {
+    font-family: var(--serif);
+    font-weight: 700;
+    font-size: 0.85rem;
+    letter-spacing: -0.02em;
+    color: var(--ink);
+  }
+
+  .sig-logo-text .dot { color: var(--signal); }
+
+  .sig-tagline {
+    font-size: 0.62rem;
+    color: var(--slate);
+    opacity: 0.65;
+    font-style: italic;
+  }
+
+  .sig-socials {
+    display: flex;
+    gap: 0.5rem;
+  }
+
+  .sig-social-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 3px;
+    background: var(--mint);
+    color: var(--jade);
+    font-size: 0.6rem;
+    font-weight: 600;
+    padding: 2px 7px;
+    border-radius: 3px;
+  }
+
+  .sig-bottom-note {
+    font-size: 0.58rem;
+    color: #ccc;
+    margin-top: 0.5rem;
+    font-style: italic;
+    line-height: 1.4;
+  }
+
+  /* ── VARIANTS ROW ── */
+  .variants-row {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-top: 1.25rem;
+  }
+
+  .variant-chip {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+  }
+
+  .variant-label {
+    font-size: 0.62rem;
+    color: #aaa;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    font-weight: 600;
+  }
+
+  /* ── PAGE RULE ── */
+  .page-rule {
+    border: none;
+    border-top: 1px solid #d8d5d0;
+    margin: 3rem 0;
+  }
+
+  /* ── SCROLLABLE WIDE ── */
+  .scroll-x {
+    overflow-x: auto;
+    padding-bottom: 0.5rem;
+  }
+
+  .scroll-x::-webkit-scrollbar { height: 4px; }
+  .scroll-x::-webkit-scrollbar-track { background: transparent; }
+  .scroll-x::-webkit-scrollbar-thumb { background: #ccc; border-radius: 2px; }
+
+  @media (max-width: 600px) {
+    body { padding: 1rem; }
+    .page-header-title { font-size: 1.5rem; }
+  }
+</style>
+</head>
+<body>
+
+<div class="page-header">
+  <div class="page-header-eyebrow">Brand Identity</div>
+  <div class="page-header-title">AI·Implmnt Brand Kit</div>
+  <div class="page-header-sub">7 assets · Signal & Jade · Morning Wash theme</div>
+</div>
+
+<!-- ══════ 1. LINKEDIN BANNER ══════ -->
+<div class="asset-section">
+  <div class="asset-label-row">
+    <div class="asset-number">1</div>
+    <div class="asset-name">LinkedIn Profile Banner</div>
+    <div class="asset-dims">2128 × 532px</div>
+  </div>
+  <div class="asset-wrap light-bg" style="padding:1.5rem;">
+    <div class="linkedin-banner">
+      <!-- decorative node graphic -->
+      <div class="banner-node-graphic">
+        <svg width="200" height="200" viewBox="0 0 200 200" fill="none">
+          <line x1="40" y1="160" x2="160" y2="40" stroke="#0F0F0D" stroke-width="1"/>
+          <circle cx="40" cy="160" r="28" fill="#FF4D00"/>
+          <circle cx="40" cy="160" r="14" fill="#fff" opacity="0.3"/>
+          <circle cx="160" cy="40" r="28" fill="#0F0F0D"/>
+          <circle cx="100" cy="100" r="10" fill="#00A878" opacity="0.5"/>
+        </svg>
+      </div>
+      <div class="banner-left">
+        <div class="banner-logo">
+          <div class="logo">
+            <svg width="28" height="28" viewBox="0 0 44 44" fill="none">
+              <line x1="10" y1="34" x2="34" y2="10" stroke="#e0ddd8" stroke-width="1.5"/>
+              <circle cx="22" cy="22" r="3" fill="#FF4D00" opacity="0.3"/>
+              <circle cx="10" cy="34" r="6" fill="#FF4D00"/>
+              <circle cx="10" cy="34" r="3" fill="#fff" opacity="0.4"/>
+              <circle cx="34" cy="10" r="6" fill="#0f0f0d"/>
+              <circle cx="34" cy="10" r="3" fill="#fff" opacity="0.15"/>
+            </svg>
+            <span class="logo-wordmark" style="font-size:17px;">AI<span class="dot">·</span>Implmnt</span>
+          </div>
+        </div>
+        <div class="banner-tagline">Not sure where to start<br>with AI? <em>That's my job.</em></div>
+        <div class="banner-sub">AI Training & Consulting for Irish SMEs · ai-implmnt.com</div>
+      </div>
+      <div class="banner-right">
+        <div class="banner-pill">
+          <div class="banner-pill-dot" style="background:var(--signal);"></div>
+          AI Strategy
+        </div>
+        <div class="banner-pill">
+          <div class="banner-pill-dot" style="background:var(--jade);"></div>
+          Staff Training
+        </div>
+        <div class="banner-pill">
+          <div class="banner-pill-dot" style="background:var(--ink);opacity:0.5;"></div>
+          Implementation
+        </div>
+      </div>
+    </div>
+  </div>
+  <p class="asset-usage">Replace the text with your name/tagline as needed. The node graphic is decorative and reinforces the logo mark. Pills on the right work as quick-glance service signifiers.</p>
+</div>
+
+<hr class="page-rule">
+
+<!-- ══════ 2. LINKEDIN POST ══════ -->
+<div class="asset-section">
+  <div class="asset-label-row">
+    <div class="asset-number">2</div>
+    <div class="asset-name">LinkedIn Post</div>
+    <div class="asset-dims">1080 × 1080px · Photo template</div>
+  </div>
+  <div class="asset-wrap dark-bg">
+    <div class="post-square">
+      <div class="post-sq-photo">
+        <div class="photo-placeholder-label">
+          <div class="photo-icon">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.4)" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
+          </div>
+          Drop photo here
+        </div>
+      </div>
+      <div class="post-sq-accent-bar"></div>
+      <div class="post-sq-overlay">
+        <div class="post-sq-tag">AI Insight</div>
+        <div class="post-sq-headline">Your insight or<br>tip headline here</div>
+        <div class="post-sq-footer">
+          <div class="post-sq-logo">AI<span class="dot">·</span>Implmnt</div>
+          <div class="post-sq-url">ai-implmnt.com</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <p class="asset-usage">Photo fills the full frame with a dark gradient overlay at the bottom for text legibility. The 4px gradient accent bar at the top ties to the brand colour system. Change the tag (e.g. "Case Study", "Quick Tip", "EU AI Act") and headline per post.</p>
+</div>
+
+<hr class="page-rule">
+
+<!-- ══════ 3. INSTAGRAM POST ══════ -->
+<div class="asset-section">
+  <div class="asset-label-row">
+    <div class="asset-number">3</div>
+    <div class="asset-name">Instagram Post</div>
+    <div class="asset-dims">1080 × 1080px · Tip card template</div>
+  </div>
+  <div class="asset-wrap light-bg">
+    <div class="insta-post">
+      <div class="insta-num">01</div>
+      <div class="insta-top">
+        <div class="insta-logo">AI<span class="dot">·</span>Implmnt</div>
+      </div>
+      <div class="insta-content">
+        <div class="insta-category">AI Tip</div>
+        <div class="insta-headline">One thing you can do <em>with AI today</em> in under 10 minutes</div>
+        <div class="insta-body">Replace with your tip, insight or short piece of useful content. Keep it to 2–3 sentences — the visual does the heavy lifting.</div>
+      </div>
+      <div class="insta-bottom">
+        <div class="insta-cta">Read more →</div>
+        <div class="insta-url">ai-implmnt.com</div>
+      </div>
+      <div class="insta-node-decor">
+        <svg width="160" height="160" viewBox="0 0 44 44" fill="none">
+          <line x1="10" y1="34" x2="34" y2="10" stroke="#0F0F0D" stroke-width="1.5"/>
+          <circle cx="10" cy="34" r="6" fill="#FF4D00"/>
+          <circle cx="34" cy="10" r="6" fill="#0F0F0D"/>
+          <circle cx="22" cy="22" r="3" fill="#00A878"/>
+        </svg>
+      </div>
+    </div>
+  </div>
+  <p class="asset-usage">Morning Wash background with clean typographic layout. The large ghost number (01, 02...) makes it easy to create a series. Best for educational tips, quick stats, or client insights — no photo needed, content carries it.</p>
+</div>
+
+<hr class="page-rule">
+
+<!-- ══════ 4. TWITTER/X POST ══════ -->
+<div class="asset-section">
+  <div class="asset-label-row">
+    <div class="asset-number">4</div>
+    <div class="asset-name">Twitter / X Post</div>
+    <div class="asset-dims">1600 × 900px · Photo template</div>
+  </div>
+  <div class="asset-wrap dark-bg" style="padding:2rem;">
+    <div class="scroll-x" style="width:100%;">
+      <div class="twitter-post">
+        <div class="twitter-photo-bg"></div>
+        <div class="twitter-overlay"></div>
+        <div class="twitter-accent-left"></div>
+        <div class="twitter-photo-label">
+          <div class="twitter-photo-icon">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.3)" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
+          </div>
+          Photo here
+        </div>
+        <div class="twitter-content">
+          <div class="twitter-top">
+            <div class="twitter-tag">Insight</div>
+            <div class="twitter-logo-inv">AI<span class="dot">·</span>Implmnt</div>
+          </div>
+          <div class="twitter-mid">
+            <div class="twitter-headline">Your headline or key stat <em>goes here</em></div>
+            <div class="twitter-sub">Supporting context or one-line summary — keep it punchy and direct. This works best as a bold statement.</div>
+          </div>
+          <div class="twitter-bottom">
+            <div class="twitter-cta">Book a free call →</div>
+            <div class="twitter-url">ai-implmnt.com</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <p class="asset-usage">Dark overlay over photo with left-side content. The 3px Signal→Jade gradient stripe on the left edge is a distinctive brand signature. Photo sits on the right third, giving visual interest without obscuring text.</p>
+</div>
+
+<hr class="page-rule">
+
+<!-- ══════ 5. PRESENTATION COVER ══════ -->
+<div class="asset-section">
+  <div class="asset-label-row">
+    <div class="asset-number">5</div>
+    <div class="asset-name">Presentation Cover Slide</div>
+    <div class="asset-dims">1920 × 1080px · 16:9</div>
+  </div>
+  <div class="asset-wrap dark-bg" style="padding:2rem;">
+    <div class="scroll-x" style="width:100%;">
+      <div class="pres-cover">
+        <div class="pres-grid-overlay"></div>
+        <div class="pres-accent-line"></div>
+        <div class="pres-node-large">
+          <svg width="280" height="280" viewBox="0 0 44 44" fill="none">
+            <line x1="10" y1="34" x2="34" y2="10" stroke="#fff" stroke-width="1"/>
+            <circle cx="10" cy="34" r="6" fill="#FF4D00"/>
+            <circle cx="34" cy="10" r="6" fill="#fff"/>
+            <circle cx="22" cy="22" r="3" fill="#00A878"/>
+          </svg>
+        </div>
+        <div class="pres-content">
+          <div class="pres-top">
+            <div class="logo">
+              <svg width="22" height="22" viewBox="0 0 44 44" fill="none">
+                <line x1="10" y1="34" x2="34" y2="10" stroke="rgba(255,255,255,0.15)" stroke-width="1.5"/>
+                <circle cx="10" cy="34" r="6" fill="#FF6B35"/>
+                <circle cx="34" cy="10" r="6" fill="rgba(255,255,255,0.8)"/>
+              </svg>
+              <span class="logo-wordmark inv" style="font-size:13px;">AI<span class="dot">·</span>Implmnt</span>
+            </div>
+            <div class="pres-date">2025 · CONFIDENTIAL</div>
+          </div>
+          <div class="pres-mid">
+            <div class="pres-eyebrow">AI Readiness Workshop</div>
+            <div class="pres-title">Getting <em>Started</em><br>With AI</div>
+            <div class="pres-subtitle">A practical guide for [Company Name] — identifying AI opportunities and building team confidence.</div>
+          </div>
+          <div class="pres-bottom">
+            <div class="pres-presenter">
+              <div class="pres-presenter-name">Your Name</div>
+              <div class="pres-presenter-role">AI Consultant · ai-implmnt.com</div>
+            </div>
+            <div style="display:flex;gap:0.5rem;">
+              <div style="width:28px;height:3px;background:var(--signal);border-radius:2px;"></div>
+              <div style="width:28px;height:3px;background:var(--jade);border-radius:2px;opacity:0.6;"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <p class="asset-usage">Deep Night gradient background with a subtle grid overlay adds depth without distraction. The large ghost node graphic bottom-right is a distinctive brand element. Swap the eyebrow, title, and subtitle per presentation. Left accent stripe carries through from social templates.</p>
+</div>
+
+<hr class="page-rule">
+
+<!-- ══════ 6. ONE-PAGER HEADER ══════ -->
+<div class="asset-section">
+  <div class="asset-label-row">
+    <div class="asset-number">6</div>
+    <div class="asset-name">One-Pager / Document Header</div>
+    <div class="asset-dims">A4 width · Top of page</div>
+  </div>
+  <div class="asset-wrap light-bg" style="padding:2rem;">
+    <div class="doc-header">
+      <div class="doc-header-top"></div>
+      <div class="doc-header-main">
+        <div class="doc-header-left">
+          <div class="doc-header-doc-type">AI Opportunity Audit</div>
+          <div class="doc-header-title">Document Title<br>Goes Here</div>
+          <div class="doc-header-meta">Prepared for: [Client Name] · Date: [Month Year]</div>
+        </div>
+        <div class="doc-header-right">
+          <div class="logo">
+            <svg width="20" height="20" viewBox="0 0 44 44" fill="none">
+              <line x1="10" y1="34" x2="34" y2="10" stroke="#e0ddd8" stroke-width="1.5"/>
+              <circle cx="10" cy="34" r="6" fill="#FF4D00"/>
+              <circle cx="34" cy="10" r="6" fill="#0f0f0d"/>
+            </svg>
+            <span class="doc-header-logo">AI<span class="dot">·</span>Implmnt</span>
+          </div>
+          <div class="doc-header-url">ai-implmnt.com</div>
+        </div>
+      </div>
+      <div class="doc-header-body">
+        <div class="doc-body-rule w100"></div>
+        <div class="doc-body-rule w85"></div>
+        <div class="doc-body-rule w70"></div>
+        <div class="doc-section-header"></div>
+        <div class="doc-cols">
+          <div class="doc-col-block">
+            <div class="doc-col-label"></div>
+            <div class="doc-col-line w90"></div>
+            <div class="doc-col-line w65"></div>
+          </div>
+          <div class="doc-col-block" style="background:linear-gradient(135deg,#E6F7F1,#FAF8F4);">
+            <div class="doc-col-label" style="background:var(--jade);"></div>
+            <div class="doc-col-line w90"></div>
+            <div class="doc-col-line w65"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <p class="asset-usage">The 5px gradient stripe at the top ties all documents together visually. Morning Wash on the header area, clean white body. The document type label in Jade and the bold Syne title give it authority. Use for proposals, audit reports, and client deliverables.</p>
+</div>
+
+<hr class="page-rule">
+
+<!-- ══════ 7. EMAIL SIGNATURE ══════ -->
+<div class="asset-section">
+  <div class="asset-label-row">
+    <div class="asset-number">7</div>
+    <div class="asset-name">Email Signature</div>
+    <div class="asset-dims">HTML · Max-width 420px</div>
+  </div>
+  <div class="asset-wrap light-bg" style="padding:2.5rem;flex-direction:column;align-items:flex-start;gap:2rem;">
+
+    <!-- MAIN VARIANT -->
+    <div class="email-sig-wrap" style="background:transparent;padding:0;">
+      <div class="sig-body-label" style="font-size:0.62rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:#aaa;margin-bottom:0.75rem;">Standard</div>
+      <div class="email-sig">
+        <div class="sig-top-strip"></div>
+        <div class="sig-body">
+          <div class="sig-name">Your Name</div>
+          <div class="sig-role">AI Consultant · AI·Implmnt</div>
+          <div class="sig-contact">
+            <a href="#">hello@ai-implmnt.com</a>
+            <span>·</span>
+            <a href="#" style="color:var(--ink);">ai-implmnt.com</a>
+            <span>·</span>
+            <a href="#" style="color:var(--jade);">LinkedIn</a>
+          </div>
+          <div class="sig-divider"></div>
+          <div class="sig-brand-row">
+            <div class="sig-logo-area">
+              <svg width="18" height="18" viewBox="0 0 44 44" fill="none">
+                <line x1="10" y1="34" x2="34" y2="10" stroke="#e0ddd8" stroke-width="1.5"/>
+                <circle cx="10" cy="34" r="6" fill="#FF4D00"/>
+                <circle cx="34" cy="10" r="6" fill="#0f0f0d"/>
+              </svg>
+              <div>
+                <div class="sig-logo-text">AI<span class="dot">·</span>Implmnt</div>
+                <div class="sig-tagline">AI consulting for Irish SMEs</div>
+              </div>
+            </div>
+            <div class="sig-socials">
+              <div class="sig-social-pill">in</div>
+            </div>
+          </div>
+          <div class="sig-bottom-note">Book a free 30-min AI discovery call → ai-implmnt.com</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- COMPACT VARIANT -->
+    <div class="email-sig-wrap" style="background:transparent;padding:0;">
+      <div class="sig-body-label" style="font-size:0.62rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:#aaa;margin-bottom:0.75rem;">Compact</div>
+      <div class="email-sig">
+        <div class="sig-top-strip"></div>
+        <div class="sig-body" style="padding:1rem 1.5rem;">
+          <div style="display:flex;align-items:center;justify-content:space-between;gap:1.5rem;">
+            <div>
+              <div class="sig-name" style="font-size:0.88rem;">Your Name</div>
+              <div class="sig-role" style="font-size:0.65rem;">AI Consultant · <a href="#" style="color:var(--signal);text-decoration:none;">ai-implmnt.com</a></div>
+            </div>
+            <div class="sig-logo-area" style="flex-shrink:0;">
+              <svg width="16" height="16" viewBox="0 0 44 44" fill="none">
+                <line x1="10" y1="34" x2="34" y2="10" stroke="#e0ddd8" stroke-width="1.5"/>
+                <circle cx="10" cy="34" r="6" fill="#FF4D00"/>
+                <circle cx="34" cy="10" r="6" fill="#0f0f0d"/>
+              </svg>
+              <div class="sig-logo-text" style="font-size:0.78rem;">AI<span class="dot">·</span>Implmnt</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <p class="asset-usage">Two variants — standard for client-facing emails, compact for day-to-day replies. Both use the same 4px gradient top strip that acts as a consistent brand thread across all assets. The "Book a free call" footer line in the standard variant works as a passive CTA on every email you send.</p>
+</div>
+
+<!-- FOOTER -->
+<div style="text-align:center;padding:2rem 0 0.5rem;border-top:1px solid #d8d5d0;margin-top:2rem;">
+  <div class="logo" style="justify-content:center;margin-bottom:0.5rem;">
+    <svg width="20" height="20" viewBox="0 0 44 44" fill="none">
+      <line x1="10" y1="34" x2="34" y2="10" stroke="#e0ddd8" stroke-width="1.5"/>
+      <circle cx="10" cy="34" r="6" fill="#FF4D00"/>
+      <circle cx="34" cy="10" r="6" fill="#0f0f0d"/>
+    </svg>
+    <span class="logo-wordmark" style="font-size:14px;">AI<span class="dot">·</span>Implmnt</span>
+  </div>
+  <p style="font-size:0.68rem;color:#aaa;">Brand Kit · Signal & Jade · 7 assets · ai-implmnt.com</p>
+</div>
+
+</body>
+</html>

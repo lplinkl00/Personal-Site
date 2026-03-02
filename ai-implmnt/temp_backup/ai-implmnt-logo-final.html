@@ -1,0 +1,687 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI·Implmnt — Final Logo</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&display=swap" rel="stylesheet">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: #EFEFED;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    color: #1a1a1a;
+    padding: 2.5rem;
+  }
+
+  .page-header {
+    text-align: center;
+    margin-bottom: 2.5rem;
+  }
+  .page-header h1 {
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: #aaa;
+    margin-bottom: 0.3rem;
+  }
+  .page-header p {
+    font-size: 1.5rem;
+    font-weight: 700;
+    letter-spacing: -0.03em;
+    color: #111;
+  }
+
+  /* ── CARD ── */
+  .card {
+    background: #fff;
+    border-radius: 16px;
+    border: 1px solid #e2e2e0;
+    overflow: hidden;
+    margin-bottom: 1.5rem;
+  }
+
+  .card-header {
+    padding: 0.85rem 1.5rem;
+    background: #fafaf9;
+    border-bottom: 1px solid #eee;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .card-title {
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: #bbb;
+  }
+
+  .card-note {
+    font-size: 0.72rem;
+    color: #ccc;
+    font-style: italic;
+  }
+
+  /* ── PRIMARY LOGO ── */
+  .primary-showcase {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    min-height: 220px;
+  }
+
+  .showcase-panel {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 3rem 2rem;
+  }
+
+  .showcase-panel + .showcase-panel {
+    border-left: 1px solid #eee;
+  }
+
+  .on-dark { background: #0f0f0d; }
+  .on-brand { background: #FF4D00; }
+
+  /* ── THE LOGO COMPONENT ── */
+  .logo {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    user-select: none;
+  }
+
+  /* SVG mark is inline in HTML */
+
+  .wordmark {
+    font-family: 'Syne', sans-serif;
+    font-weight: 700;
+    letter-spacing: -0.03em;
+    line-height: 1;
+    color: #0f0f0d;
+  }
+
+  .wordmark .sep { color: #FF4D00; }
+  .wordmark-inv { color: #fff; }
+  .wordmark-inv .sep { color: rgba(255,255,255,0.55); }
+  .wordmark-brand { color: #fff; }
+  .wordmark-brand .sep { color: rgba(255,255,255,0.5); }
+
+  /* ── SIZES ── */
+  .sizes-row {
+    padding: 1.75rem 2rem;
+    background: #fafaf9;
+    border-top: 1px solid #eee;
+    display: flex;
+    align-items: center;
+    gap: 2.5rem;
+    flex-wrap: wrap;
+  }
+
+  .size-label {
+    font-size: 0.62rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: #ccc;
+  }
+
+  /* ── MARK ONLY ── */
+  .marks-row {
+    padding: 1.75rem 2rem;
+    border-top: 1px solid #eee;
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+    background: #fff;
+  }
+
+  .mark-on-dark {
+    background: #0f0f0d;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+  }
+
+  .mark-on-brand {
+    background: #FF4D00;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+  }
+
+  /* ── CLEARSPACE ── */
+  .clearspace-demo {
+    padding: 2.5rem 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-top: 1px solid #eee;
+  }
+
+  .clearspace-inner {
+    display: inline-flex;
+    align-items: center;
+    position: relative;
+  }
+
+  .clearspace-box {
+    position: absolute;
+    inset: -16px;
+    border: 1.5px dashed #FF4D00;
+    border-radius: 4px;
+    opacity: 0.35;
+    pointer-events: none;
+  }
+
+  .clearspace-label {
+    position: absolute;
+    bottom: -28px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 0.65rem;
+    color: #FF4D00;
+    opacity: 0.7;
+    white-space: nowrap;
+  }
+
+  /* ── DONT DOS ── */
+  .donts-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    border-top: 1px solid #eee;
+  }
+
+  .dont-item {
+    padding: 1.75rem 1.25rem 1.25rem;
+    text-align: center;
+    border-right: 1px solid #eee;
+    position: relative;
+  }
+  .dont-item:last-child { border-right: none; }
+
+  .dont-label {
+    font-size: 0.68rem;
+    color: #bbb;
+    margin-top: 0.75rem;
+    line-height: 1.4;
+  }
+
+  .dont-strike {
+    display: inline-block;
+    position: relative;
+  }
+
+  .dont-strike::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: -4px;
+    right: -4px;
+    height: 2px;
+    background: #ff3333;
+    border-radius: 2px;
+    transform: rotate(-8deg);
+  }
+
+  /* ── FAVICON ── */
+  .favicon-row {
+    padding: 1.75rem 2rem;
+    border-top: 1px solid #eee;
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    background: #fff;
+  }
+
+  .favicon-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .favicon-note {
+    font-size: 0.62rem;
+    color: #bbb;
+    text-align: center;
+  }
+
+  .fav-32 {
+    width: 32px; height: 32px;
+    background: #FF4D00;
+    border-radius: 7px;
+    display: flex; align-items: center; justify-content: center;
+  }
+
+  .fav-16 {
+    width: 16px; height: 16px;
+    background: #FF4D00;
+    border-radius: 4px;
+    display: flex; align-items: center; justify-content: center;
+  }
+
+  .fav-browser {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    background: #f0f0f0;
+    border-radius: 6px;
+    padding: 5px 10px;
+    font-size: 0.75rem;
+    color: #555;
+  }
+
+  /* ── COLOUR PALETTE ── */
+  .palette-row {
+    padding: 1.75rem 2rem;
+    border-top: 1px solid #eee;
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    align-items: stretch;
+    background: #fafaf9;
+  }
+
+  .colour-block {
+    border-radius: 10px;
+    overflow: hidden;
+    border: 1px solid rgba(0,0,0,0.07);
+    min-width: 120px;
+    flex: 1;
+  }
+
+  .colour-swatch {
+    height: 64px;
+  }
+
+  .colour-info {
+    padding: 0.65rem 0.75rem;
+    background: #fff;
+  }
+
+  .colour-name {
+    font-size: 0.72rem;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 0.1rem;
+  }
+
+  .colour-hex {
+    font-size: 0.65rem;
+    color: #aaa;
+    font-family: 'Courier New', monospace;
+  }
+
+  .colour-role {
+    font-size: 0.6rem;
+    color: #ccc;
+    margin-top: 0.15rem;
+  }
+
+  /* ── TYPOGRAPHY ── */
+  .type-row {
+    padding: 2rem;
+    border-top: 1px solid #eee;
+    background: #fff;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+  }
+
+  .type-specimen h3 {
+    font-size: 0.62rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: #ccc;
+    margin-bottom: 0.75rem;
+  }
+
+  .type-display {
+    font-family: 'Syne', sans-serif;
+    font-weight: 700;
+    font-size: 2rem;
+    letter-spacing: -0.03em;
+    line-height: 1.1;
+    color: #0f0f0d;
+  }
+
+  .type-body-sample {
+    font-size: 0.9rem;
+    line-height: 1.7;
+    color: #555;
+    margin-top: 0.5rem;
+  }
+
+  .type-meta {
+    font-size: 0.65rem;
+    color: #ccc;
+    margin-top: 0.5rem;
+    font-family: 'Courier New', monospace;
+  }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 720px) {
+    body { padding: 1.25rem; }
+    .primary-showcase { grid-template-columns: 1fr; }
+    .showcase-panel + .showcase-panel { border-left: none; border-top: 1px solid #eee; }
+    .donts-grid { grid-template-columns: 1fr 1fr; }
+    .type-row { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<div class="page-header">
+  <h1>Brand Identity · Final</h1>
+  <p>AI·Implmnt — Logo System</p>
+</div>
+
+<!-- ══════ PRIMARY LOGO ══════ -->
+<div class="card">
+  <div class="card-header">
+    <span class="card-title">Primary Logo</span>
+    <span class="card-note">On light · On dark · On brand colour</span>
+  </div>
+
+  <div class="primary-showcase">
+    <!-- ON LIGHT -->
+    <div class="showcase-panel">
+      <div class="logo">
+        <svg width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <!-- connecting line -->
+          <line x1="10" y1="34" x2="34" y2="10" stroke="#e0ddd8" stroke-width="1.5"/>
+          <!-- midpoint glow -->
+          <circle cx="22" cy="22" r="3.5" fill="#FF4D00" opacity="0.2"/>
+          <circle cx="22" cy="22" r="2" fill="#FF4D00" opacity="0.4"/>
+          <!-- bottom-left node: accent -->
+          <circle cx="10" cy="34" r="6" fill="#FF4D00"/>
+          <circle cx="10" cy="34" r="3" fill="#fff" opacity="0.4"/>
+          <!-- top-right node: ink -->
+          <circle cx="34" cy="10" r="6" fill="#0f0f0d"/>
+          <circle cx="34" cy="10" r="3" fill="#fff" opacity="0.15"/>
+        </svg>
+        <span class="wordmark" style="font-size:26px;">AI<span class="sep">·</span>Implmnt</span>
+      </div>
+    </div>
+
+    <!-- ON DARK -->
+    <div class="showcase-panel on-dark">
+      <div class="logo">
+        <svg width="40" height="40" viewBox="0 0 44 44" fill="none">
+          <line x1="10" y1="34" x2="34" y2="10" stroke="rgba(255,255,255,0.12)" stroke-width="1.5"/>
+          <circle cx="22" cy="22" r="3.5" fill="#FF6B35" opacity="0.25"/>
+          <circle cx="22" cy="22" r="2" fill="#FF6B35" opacity="0.5"/>
+          <circle cx="10" cy="34" r="6" fill="#FF6B35"/>
+          <circle cx="10" cy="34" r="3" fill="#fff" opacity="0.35"/>
+          <circle cx="34" cy="10" r="6" fill="rgba(255,255,255,0.9)"/>
+          <circle cx="34" cy="10" r="3" fill="#0f0f0d" opacity="0.15"/>
+        </svg>
+        <span class="wordmark wordmark-inv" style="font-size:22px;">AI<span class="sep">·</span>Implmnt</span>
+      </div>
+    </div>
+
+    <!-- ON BRAND -->
+    <div class="showcase-panel on-brand">
+      <div class="logo">
+        <svg width="40" height="40" viewBox="0 0 44 44" fill="none">
+          <line x1="10" y1="34" x2="34" y2="10" stroke="rgba(255,255,255,0.25)" stroke-width="1.5"/>
+          <circle cx="22" cy="22" r="3.5" fill="rgba(255,255,255,0.2)"/>
+          <circle cx="22" cy="22" r="2" fill="rgba(255,255,255,0.35)"/>
+          <circle cx="10" cy="34" r="6" fill="rgba(255,255,255,0.9)"/>
+          <circle cx="10" cy="34" r="3" fill="#FF4D00" opacity="0.3"/>
+          <circle cx="34" cy="10" r="6" fill="rgba(255,255,255,0.35)"/>
+          <circle cx="34" cy="10" r="3" fill="rgba(255,255,255,0.5)"/>
+        </svg>
+        <span class="wordmark wordmark-brand" style="font-size:22px;">AI<span class="sep">·</span>Implmnt</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- SIZES -->
+  <div class="sizes-row">
+    <span class="size-label">Scale</span>
+
+    <!-- XL -->
+    <div class="logo">
+      <svg width="36" height="36" viewBox="0 0 44 44" fill="none">
+        <line x1="10" y1="34" x2="34" y2="10" stroke="#e0ddd8" stroke-width="1.5"/>
+        <circle cx="22" cy="22" r="3.5" fill="#FF4D00" opacity="0.2"/>
+        <circle cx="22" cy="22" r="2" fill="#FF4D00" opacity="0.4"/>
+        <circle cx="10" cy="34" r="6" fill="#FF4D00"/>
+        <circle cx="10" cy="34" r="3" fill="#fff" opacity="0.4"/>
+        <circle cx="34" cy="10" r="6" fill="#0f0f0d"/>
+        <circle cx="34" cy="10" r="3" fill="#fff" opacity="0.15"/>
+      </svg>
+      <span class="wordmark" style="font-size:21px;">AI<span class="sep">·</span>Implmnt</span>
+    </div>
+
+    <!-- MD -->
+    <div class="logo">
+      <svg width="26" height="26" viewBox="0 0 44 44" fill="none">
+        <line x1="10" y1="34" x2="34" y2="10" stroke="#e0ddd8" stroke-width="1.5"/>
+        <circle cx="22" cy="22" r="3" fill="#FF4D00" opacity="0.3"/>
+        <circle cx="10" cy="34" r="6" fill="#FF4D00"/>
+        <circle cx="34" cy="10" r="6" fill="#0f0f0d"/>
+      </svg>
+      <span class="wordmark" style="font-size:15px;">AI<span class="sep">·</span>Implmnt</span>
+    </div>
+
+    <!-- SM -->
+    <div class="logo">
+      <svg width="18" height="18" viewBox="0 0 44 44" fill="none">
+        <line x1="10" y1="34" x2="34" y2="10" stroke="#e0ddd8" stroke-width="2"/>
+        <circle cx="10" cy="34" r="6" fill="#FF4D00"/>
+        <circle cx="34" cy="10" r="6" fill="#0f0f0d"/>
+      </svg>
+      <span class="wordmark" style="font-size:11px;">AI<span class="sep">·</span>Implmnt</span>
+    </div>
+  </div>
+
+  <!-- MARK ONLY -->
+  <div class="marks-row">
+    <span class="size-label">Mark only</span>
+
+    <!-- Light bg -->
+    <svg width="44" height="44" viewBox="0 0 44 44" fill="none">
+      <line x1="10" y1="34" x2="34" y2="10" stroke="#e0ddd8" stroke-width="1.5"/>
+      <circle cx="22" cy="22" r="3.5" fill="#FF4D00" opacity="0.2"/>
+      <circle cx="22" cy="22" r="2" fill="#FF4D00" opacity="0.4"/>
+      <circle cx="10" cy="34" r="6" fill="#FF4D00"/>
+      <circle cx="10" cy="34" r="3" fill="#fff" opacity="0.4"/>
+      <circle cx="34" cy="10" r="6" fill="#0f0f0d"/>
+      <circle cx="34" cy="10" r="3" fill="#fff" opacity="0.15"/>
+    </svg>
+
+    <!-- Dark bg -->
+    <div class="mark-on-dark" style="border-radius:12px;padding:10px;">
+      <svg width="32" height="32" viewBox="0 0 44 44" fill="none">
+        <line x1="10" y1="34" x2="34" y2="10" stroke="rgba(255,255,255,0.15)" stroke-width="1.5"/>
+        <circle cx="22" cy="22" r="2" fill="#FF6B35" opacity="0.5"/>
+        <circle cx="10" cy="34" r="6" fill="#FF6B35"/>
+        <circle cx="10" cy="34" r="3" fill="#fff" opacity="0.35"/>
+        <circle cx="34" cy="10" r="6" fill="rgba(255,255,255,0.85)"/>
+      </svg>
+    </div>
+
+    <!-- Brand bg -->
+    <div class="mark-on-brand" style="border-radius:12px;padding:10px;">
+      <svg width="32" height="32" viewBox="0 0 44 44" fill="none">
+        <line x1="10" y1="34" x2="34" y2="10" stroke="rgba(255,255,255,0.3)" stroke-width="1.5"/>
+        <circle cx="22" cy="22" r="2" fill="rgba(255,255,255,0.4)"/>
+        <circle cx="10" cy="34" r="6" fill="rgba(255,255,255,0.9)"/>
+        <circle cx="34" cy="10" r="6" fill="rgba(255,255,255,0.35)"/>
+      </svg>
+    </div>
+
+    <!-- Favicon sizes -->
+    <div class="fav-32">
+      <svg width="18" height="18" viewBox="0 0 44 44" fill="none">
+        <line x1="10" y1="34" x2="34" y2="10" stroke="rgba(255,255,255,0.3)" stroke-width="2"/>
+        <circle cx="10" cy="34" r="7" fill="#fff"/>
+        <circle cx="34" cy="10" r="7" fill="rgba(255,255,255,0.4)"/>
+      </svg>
+    </div>
+    <span class="favicon-note" style="font-size:0.62rem;color:#bbb;">32px favicon</span>
+
+    <div class="fav-16">
+      <svg width="10" height="10" viewBox="0 0 44 44" fill="none">
+        <circle cx="10" cy="34" r="7" fill="#fff"/>
+        <circle cx="34" cy="10" r="7" fill="rgba(255,255,255,0.4)"/>
+      </svg>
+    </div>
+    <span class="favicon-note" style="font-size:0.62rem;color:#bbb;">16px favicon</span>
+  </div>
+
+  <!-- CLEARSPACE -->
+  <div class="clearspace-demo" style="background:#fafaf9;border-top:1px solid #eee;">
+    <div style="position:relative;display:inline-flex;align-items:center;padding:16px;">
+      <div class="logo">
+        <svg width="36" height="36" viewBox="0 0 44 44" fill="none">
+          <line x1="10" y1="34" x2="34" y2="10" stroke="#e0ddd8" stroke-width="1.5"/>
+          <circle cx="22" cy="22" r="3" fill="#FF4D00" opacity="0.3"/>
+          <circle cx="10" cy="34" r="6" fill="#FF4D00"/>
+          <circle cx="10" cy="34" r="3" fill="#fff" opacity="0.4"/>
+          <circle cx="34" cy="10" r="6" fill="#0f0f0d"/>
+        </svg>
+        <span class="wordmark" style="font-size:21px;">AI<span class="sep">·</span>Implmnt</span>
+      </div>
+      <div style="position:absolute;inset:0;border:1.5px dashed #FF4D00;border-radius:4px;opacity:0.3;"></div>
+      <span style="position:absolute;bottom:-22px;left:50%;transform:translateX(-50%);font-size:0.62rem;color:#FF4D00;opacity:0.6;white-space:nowrap;">Minimum clearspace — equal to the height of the mark</span>
+    </div>
+  </div>
+</div>
+
+<!-- ══════ COLOUR PALETTE ══════ -->
+<div class="card">
+  <div class="card-header">
+    <span class="card-title">Colour Palette</span>
+    <span class="card-note">Primary · Supporting · Neutral</span>
+  </div>
+  <div class="palette-row">
+    <div class="colour-block">
+      <div class="colour-swatch" style="background:#FF4D00;"></div>
+      <div class="colour-info">
+        <div class="colour-name">Signal Orange</div>
+        <div class="colour-hex">#FF4D00</div>
+        <div class="colour-role">Primary accent · CTAs · Mark</div>
+      </div>
+    </div>
+    <div class="colour-block">
+      <div class="colour-swatch" style="background:#0f0f0d;"></div>
+      <div class="colour-info">
+        <div class="colour-name">Near Black</div>
+        <div class="colour-hex">#0F0F0D</div>
+        <div class="colour-role">Text · Backgrounds · Mark</div>
+      </div>
+    </div>
+    <div class="colour-block">
+      <div class="colour-swatch" style="background:#F5F5F3;"></div>
+      <div class="colour-info">
+        <div class="colour-name">Off White</div>
+        <div class="colour-hex">#F5F5F3</div>
+        <div class="colour-role">Page background · Panels</div>
+      </div>
+    </div>
+    <div class="colour-block">
+      <div class="colour-swatch" style="background:#FF7A40;"></div>
+      <div class="colour-info">
+        <div class="colour-name">Signal Light</div>
+        <div class="colour-hex">#FF7A40</div>
+        <div class="colour-role">Hover states · Highlights</div>
+      </div>
+    </div>
+    <div class="colour-block">
+      <div class="colour-swatch" style="background:#6B6B68;"></div>
+      <div class="colour-info">
+        <div class="colour-name">Mid Grey</div>
+        <div class="colour-hex">#6B6B68</div>
+        <div class="colour-role">Body text · Subheadings</div>
+      </div>
+    </div>
+    <div class="colour-block">
+      <div class="colour-swatch" style="background:#E2E2DF;"></div>
+      <div class="colour-info">
+        <div class="colour-name">Rule</div>
+        <div class="colour-hex">#E2E2DF</div>
+        <div class="colour-role">Dividers · Borders · Lines</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════ TYPOGRAPHY ══════ -->
+<div class="card">
+  <div class="card-header">
+    <span class="card-title">Typography</span>
+    <span class="card-note">Brand fonts — both available free via Google Fonts</span>
+  </div>
+  <div class="type-row">
+    <div class="type-specimen">
+      <h3>Display / Logo — Syne Bold</h3>
+      <div class="type-display">AI·Implmnt<br><span style="color:#FF4D00;">Heading One</span></div>
+      <div class="type-meta">Syne · 700 weight · Use for: logo, hero headlines, section titles</div>
+    </div>
+    <div class="type-specimen">
+      <h3>Body — DM Sans Regular / Medium</h3>
+      <p style="font-family:'DM Sans',sans-serif;font-size:1rem;line-height:1.75;color:#444;margin-bottom:0.5rem;">
+        We help small Irish businesses cut through the noise and find the AI tools that actually fit the way they work.
+      </p>
+      <p style="font-family:'DM Sans',sans-serif;font-size:0.82rem;color:#aaa;">
+        <strong style="color:#555;">Medium 500</strong> for UI labels, buttons, captions
+      </p>
+      <div class="type-meta" style="margin-top:0.5rem;">DM Sans · 400 / 500 weight · Use for: all body copy, UI, nav</div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════ DON'TS ══════ -->
+<div class="card">
+  <div class="card-header">
+    <span class="card-title">Logo Don'ts</span>
+    <span class="card-note">Please avoid these at all times</span>
+  </div>
+  <div class="donts-grid">
+    <div class="dont-item">
+      <div class="dont-strike">
+        <span style="font-family:'Syne',sans-serif;font-weight:700;font-size:18px;letter-spacing:-0.03em;color:#aaa;">AI·Implmnt</span>
+      </div>
+      <div class="dont-label">Don't use on low-contrast backgrounds</div>
+    </div>
+    <div class="dont-item">
+      <div class="dont-strike">
+        <span style="font-family:'Syne',sans-serif;font-weight:700;font-size:18px;letter-spacing:0.1em;color:#0f0f0d;">AI · IMPLMNT</span>
+      </div>
+      <div class="dont-label">Don't stretch or alter letter-spacing</div>
+    </div>
+    <div class="dont-item">
+      <div class="dont-strike">
+        <span style="font-family:'Syne',sans-serif;font-weight:700;font-size:18px;letter-spacing:-0.03em;color:#FF4D00;">AI·Implmnt</span>
+      </div>
+      <div class="dont-label">Don't use accent colour for full wordmark</div>
+    </div>
+    <div class="dont-item">
+      <div class="dont-strike">
+        <span style="font-family:'Arial',sans-serif;font-weight:700;font-size:18px;color:#0f0f0d;">AI·Implmnt</span>
+      </div>
+      <div class="dont-label">Don't substitute with other fonts</div>
+    </div>
+  </div>
+</div>
+
+<p style="text-align:center;font-size:0.72rem;color:#bbb;margin-top:1rem;padding-bottom:1rem;">AI·Implmnt Brand Identity · Confidential · ai-implmnt.com</p>
+
+</body>
+</html>

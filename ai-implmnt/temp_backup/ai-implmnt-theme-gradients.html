@@ -1,0 +1,820 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI·Implmnt — Theme 2 Gradients</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: #ECEAE6;
+    font-family: 'DM Sans', sans-serif;
+    color: #1a1a1a;
+    padding: 2.5rem;
+  }
+
+  .page-header {
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+  .page-header h1 {
+    font-size: 0.68rem;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: #aaa;
+    margin-bottom: 0.4rem;
+  }
+  .page-header p {
+    font-size: 1.6rem;
+    font-weight: 700;
+    letter-spacing: -0.03em;
+    color: #111;
+    margin-bottom: 0.3rem;
+  }
+  .page-header span {
+    font-size: 0.85rem;
+    color: #888;
+  }
+
+  /* ── SECTION TITLE ── */
+  .section-title {
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: #aaa;
+    margin-bottom: 1rem;
+    padding-left: 0.25rem;
+  }
+
+  /* ── GRADIENT CARD ── */
+  .card {
+    background: #fff;
+    border-radius: 20px;
+    border: 1px solid #e0ddd8;
+    overflow: hidden;
+    margin-bottom: 2.5rem;
+    box-shadow: 0 2px 20px rgba(0,0,0,0.04);
+  }
+
+  .card-header {
+    padding: 0.9rem 1.75rem;
+    background: #fafaf8;
+    border-bottom: 1px solid #eee;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .card-name {
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: #bbb;
+  }
+
+  .card-note {
+    font-size: 0.72rem;
+    color: #ccc;
+    font-style: italic;
+  }
+
+  /* ── GRADIENT GRID ── */
+  .grad-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0;
+  }
+
+  .grad-item {
+    display: flex;
+    flex-direction: column;
+    border-right: 1px solid #eee;
+  }
+  .grad-item:last-child { border-right: none; }
+
+  .grad-swatch {
+    height: 120px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .grad-swatch-tall {
+    height: 180px;
+  }
+
+  .grad-info {
+    padding: 1rem 1.1rem;
+    border-top: 1px solid #eee;
+    flex: 1;
+    background: #fff;
+  }
+
+  .grad-name {
+    font-size: 0.78rem;
+    font-weight: 600;
+    color: #222;
+    margin-bottom: 0.25rem;
+  }
+
+  .grad-use {
+    font-size: 0.7rem;
+    color: #999;
+    line-height: 1.55;
+    margin-bottom: 0.5rem;
+  }
+
+  .grad-stops {
+    font-size: 0.62rem;
+    font-family: 'Courier New', monospace;
+    color: #bbb;
+    line-height: 1.6;
+  }
+
+  .grad-tag {
+    display: inline-block;
+    font-size: 0.6rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 0.2rem 0.5rem;
+    border-radius: 4px;
+    margin-top: 0.5rem;
+  }
+
+  .tag-bold { background: #FFE8DF; color: #FF4D00; }
+  .tag-soft { background: #E6F7F1; color: #00A878; }
+  .tag-dark { background: #e8e8e8; color: #555; }
+  .tag-page { background: #f0f0ee; color: #888; }
+
+  /* ── USAGE PREVIEW ── */
+  .usage-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0;
+    border-top: 1px solid #eee;
+  }
+
+  .usage-panel {
+    padding: 2rem 1.75rem;
+    border-right: 1px solid #eee;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+  .usage-panel:last-child { border-right: none; }
+
+  .usage-label {
+    font-size: 0.62rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #ccc;
+    margin-bottom: 0.25rem;
+  }
+
+  /* HERO MOCK */
+  .mock-hero-grad {
+    border-radius: 12px;
+    padding: 1.5rem;
+    min-height: 160px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .mock-hero-content { position: relative; z-index: 1; }
+
+  .mock-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    background: rgba(255,255,255,0.5);
+    backdrop-filter: blur(4px);
+    border-radius: 100px;
+    padding: 3px 8px;
+    font-size: 0.6rem;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 0.6rem;
+  }
+
+  .mock-tag-dot {
+    width: 4px; height: 4px;
+    border-radius: 50%;
+    background: #FF4D00;
+  }
+
+  .mock-h-line {
+    height: 10px;
+    border-radius: 3px;
+    margin-bottom: 0.4rem;
+    background: rgba(15,15,13,0.75);
+  }
+  .mock-h-line.accent { background: #FF4D00; opacity: 0.8; }
+  .mock-h-line.w100 { width: 100%; }
+  .mock-h-line.w75 { width: 75%; }
+  .mock-h-line.w55 { width: 55%; }
+
+  .mock-body-lines { margin: 0.5rem 0 0.75rem; }
+  .mock-b-line {
+    height: 6px;
+    background: rgba(15,15,13,0.18);
+    border-radius: 2px;
+    margin-bottom: 0.3rem;
+  }
+  .mock-b-line.w85 { width: 85%; }
+  .mock-b-line.w65 { width: 65%; }
+
+  .mock-cta {
+    display: inline-flex;
+    align-items: center;
+    background: #FF4D00;
+    color: #fff;
+    font-size: 0.62rem;
+    font-weight: 700;
+    padding: 5px 12px;
+    border-radius: 6px;
+  }
+
+  /* SECTION MOCK */
+  .mock-section-dark {
+    border-radius: 12px;
+    padding: 1.5rem;
+    min-height: 160px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .mock-section-eyebrow {
+    height: 5px;
+    width: 50px;
+    border-radius: 2px;
+    background: rgba(255,255,255,0.3);
+    margin-bottom: 0.5rem;
+  }
+
+  .mock-section-h {
+    height: 10px;
+    border-radius: 3px;
+    background: rgba(255,255,255,0.7);
+    margin-bottom: 0.4rem;
+  }
+  .mock-section-h.w90 { width: 90%; }
+  .mock-section-h.w65 { width: 65%; }
+
+  .mock-cards-row {
+    display: flex;
+    gap: 0.4rem;
+    margin-top: 0.75rem;
+  }
+
+  .mock-mini-card {
+    flex: 1;
+    height: 36px;
+    border-radius: 6px;
+    background: rgba(255,255,255,0.1);
+    border: 1px solid rgba(255,255,255,0.12);
+  }
+
+  /* CARD MOCK */
+  .mock-card-grad {
+    border-radius: 12px;
+    padding: 1.25rem;
+    border: 1px solid rgba(0,0,0,0.06);
+  }
+
+  .mock-card-icon-grad {
+    width: 32px;
+    height: 32px;
+    border-radius: 8px;
+    margin-bottom: 0.6rem;
+  }
+
+  .mock-card-title-line {
+    height: 8px;
+    border-radius: 3px;
+    background: #1a1a1a;
+    width: 65%;
+    margin-bottom: 0.4rem;
+    opacity: 0.75;
+  }
+
+  .mock-card-body-line {
+    height: 5px;
+    border-radius: 2px;
+    background: #e0ddd8;
+    margin-bottom: 0.3rem;
+  }
+  .mock-card-body-line.w80 { width: 80%; }
+  .mock-card-body-line.w55 { width: 55%; }
+
+  .mock-card-cta-line {
+    height: 5px;
+    width: 48px;
+    border-radius: 2px;
+    margin-top: 0.5rem;
+  }
+
+  /* EMAIL SIGNATURE MOCK */
+  .mock-email {
+    border: 1px solid #eee;
+    border-radius: 12px;
+    overflow: hidden;
+  }
+
+  .mock-email-header {
+    height: 6px;
+    width: 100%;
+  }
+
+  .mock-email-body {
+    padding: 1rem 1.1rem;
+    background: #fff;
+  }
+
+  .mock-email-name {
+    font-family: 'Syne', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: #0f0f0d;
+    margin-bottom: 0.15rem;
+  }
+
+  .mock-email-role {
+    font-size: 0.68rem;
+    color: #888;
+    margin-bottom: 0.5rem;
+  }
+
+  .mock-email-divider {
+    height: 1px;
+    background: #eee;
+    margin: 0.5rem 0;
+  }
+
+  .mock-email-logo {
+    font-family: 'Syne', sans-serif;
+    font-weight: 700;
+    font-size: 0.8rem;
+    letter-spacing: -0.02em;
+    color: #0f0f0d;
+  }
+
+  /* BUTTON STATES -->*/
+  .btn-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+    align-items: center;
+    padding: 1.5rem 1.75rem;
+    border-top: 1px solid #eee;
+    background: #fafaf8;
+  }
+
+  .btn-label {
+    font-size: 0.62rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #ccc;
+    margin-right: 0.25rem;
+  }
+
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 600;
+    padding: 0.55rem 1.1rem;
+    border-radius: 7px;
+    cursor: pointer;
+    border: none;
+    transition: all 0.15s;
+  }
+
+  .btn-primary { background: #FF4D00; color: #fff; }
+  .btn-secondary { background: #00A878; color: #fff; }
+  .btn-ghost { background: transparent; color: #0f0f0d; border: 1.5px solid #E4E0D9; }
+  .btn-ghost-jade { background: transparent; color: #00A878; border: 1.5px solid #00A878; }
+  .btn-dark { background: #0f0f0d; color: #fff; }
+
+  .btn-grad-signal {
+    background: linear-gradient(135deg, #FF4D00, #FF8C55);
+    color: #fff;
+    border: none;
+  }
+
+  .btn-grad-jade {
+    background: linear-gradient(135deg, #00A878, #00D49A);
+    color: #fff;
+    border: none;
+  }
+
+  /* ── COLOUR FOUNDATION ── */
+  .foundation-row {
+    display: flex;
+    gap: 0;
+    border-top: 1px solid #eee;
+  }
+
+  .foundation-chip {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .foundation-swatch {
+    height: 56px;
+  }
+
+  .foundation-info {
+    padding: 0.65rem 0.75rem;
+    background: #fff;
+    border-top: 1px solid #eee;
+  }
+
+  .foundation-name {
+    font-size: 0.7rem;
+    font-weight: 600;
+    color: #333;
+  }
+
+  .foundation-hex {
+    font-size: 0.6rem;
+    font-family: 'Courier New', monospace;
+    color: #aaa;
+  }
+
+  .foundation-role {
+    font-size: 0.58rem;
+    color: #ccc;
+    margin-top: 0.1rem;
+    line-height: 1.4;
+  }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 800px) {
+    body { padding: 1.25rem; }
+    .grad-grid { grid-template-columns: 1fr 1fr; }
+    .usage-grid { grid-template-columns: 1fr; }
+    .foundation-row { flex-wrap: wrap; }
+    .foundation-chip { min-width: 45%; }
+  }
+</style>
+</head>
+<body>
+
+<div class="page-header">
+  <h1>Brand Theme · Finalised</h1>
+  <p>Theme 2 — Signal & Jade</p>
+  <span>Full gradient set · Pastel integrations · UI usage previews</span>
+</div>
+
+<!-- ══════ FOUNDATION COLOURS ══════ -->
+<div class="card">
+  <div class="card-header">
+    <span class="card-name">Colour Foundation</span>
+    <span class="card-note">The full palette — primaries, pastels, neutrals</span>
+  </div>
+  <div class="foundation-row">
+    <div class="foundation-chip">
+      <div class="foundation-swatch" style="background:#FF4D00;"></div>
+      <div class="foundation-info">
+        <div class="foundation-name">Signal</div>
+        <div class="foundation-hex">#FF4D00</div>
+        <div class="foundation-role">Primary CTA · Logo mark · Highlights</div>
+      </div>
+    </div>
+    <div class="foundation-chip">
+      <div class="foundation-swatch" style="background:#00A878;"></div>
+      <div class="foundation-info">
+        <div class="foundation-name">Jade</div>
+        <div class="foundation-hex">#00A878</div>
+        <div class="foundation-role">Secondary accent · Cards · Badges</div>
+      </div>
+    </div>
+    <div class="foundation-chip">
+      <div class="foundation-swatch" style="background:#0f0f0d;"></div>
+      <div class="foundation-info">
+        <div class="foundation-name">Ink</div>
+        <div class="foundation-hex">#0F0F0D</div>
+        <div class="foundation-role">Headlines · Dark sections · Logo</div>
+      </div>
+    </div>
+    <div class="foundation-chip">
+      <div class="foundation-swatch" style="background:#FAF8F4;"></div>
+      <div class="foundation-info">
+        <div class="foundation-name">Cream</div>
+        <div class="foundation-hex">#FAF8F4</div>
+        <div class="foundation-role">Page background · Light panels</div>
+      </div>
+    </div>
+    <div class="foundation-chip">
+      <div class="foundation-swatch" style="background:#FFF0EA;"></div>
+      <div class="foundation-info">
+        <div class="foundation-name">Blush</div>
+        <div class="foundation-hex">#FFF0EA</div>
+        <div class="foundation-role">Signal tint · Tag backgrounds · Hover fills</div>
+      </div>
+    </div>
+    <div class="foundation-chip">
+      <div class="foundation-swatch" style="background:#E6F7F1;"></div>
+      <div class="foundation-info">
+        <div class="foundation-name">Mint</div>
+        <div class="foundation-hex">#E6F7F1</div>
+        <div class="foundation-role">Jade tint · Card icons · Badge fills</div>
+      </div>
+    </div>
+    <div class="foundation-chip">
+      <div class="foundation-swatch" style="background:#6B6B68;"></div>
+      <div class="foundation-info">
+        <div class="foundation-name">Slate</div>
+        <div class="foundation-hex">#6B6B68</div>
+        <div class="foundation-role">Body copy · Subtext</div>
+      </div>
+    </div>
+    <div class="foundation-chip">
+      <div class="foundation-swatch" style="background:#E4E0D9;"></div>
+      <div class="foundation-info">
+        <div class="foundation-name">Rule</div>
+        <div class="foundation-hex">#E4E0D9</div>
+        <div class="foundation-role">Borders · Dividers · Ghost buttons</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════ BOLD GRADIENTS ══════ -->
+<div class="card">
+  <div class="card-header">
+    <span class="card-name">Bold Gradients</span>
+    <span class="card-note">For CTAs, hero sections, and high-impact graphics</span>
+  </div>
+  <div class="grad-grid">
+    <div class="grad-item">
+      <div class="grad-swatch" style="background:linear-gradient(135deg,#FF4D00,#FF8C55);"></div>
+      <div class="grad-info">
+        <div class="grad-name">Signal Warm</div>
+        <div class="grad-use">Primary CTA buttons, hero accents, icon backgrounds</div>
+        <div class="grad-stops">#FF4D00 → #FF8C55<br>135° linear</div>
+        <span class="grad-tag tag-bold">Bold · CTA</span>
+      </div>
+    </div>
+    <div class="grad-item">
+      <div class="grad-swatch" style="background:linear-gradient(135deg,#00A878,#00D49A);"></div>
+      <div class="grad-info">
+        <div class="grad-name">Jade Fresh</div>
+        <div class="grad-use">Secondary CTAs, success states, card headers</div>
+        <div class="grad-stops">#00A878 → #00D49A<br>135° linear</div>
+        <span class="grad-tag tag-soft">Bold · Secondary</span>
+      </div>
+    </div>
+    <div class="grad-item">
+      <div class="grad-swatch" style="background:linear-gradient(135deg,#0f0f0d 0%,#1C3D30 100%);"></div>
+      <div class="grad-info">
+        <div class="grad-name">Deep Night</div>
+        <div class="grad-use">Dark section backgrounds, footer, testimonial blocks</div>
+        <div class="grad-stops">#0F0F0D → #1C3D30<br>135° linear</div>
+        <span class="grad-tag tag-dark">Dark · Background</span>
+      </div>
+    </div>
+    <div class="grad-item">
+      <div class="grad-swatch" style="background:linear-gradient(135deg,#FF4D00 0%,#00A878 100%);"></div>
+      <div class="grad-info">
+        <div class="grad-name">Cross Accent</div>
+        <div class="grad-use">Graphics and social assets only — too bold for UI elements</div>
+        <div class="grad-stops">#FF4D00 → #00A878<br>135° linear</div>
+        <span class="grad-tag tag-bold">Graphics only</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════ PASTEL GRADIENTS ══════ -->
+<div class="card">
+  <div class="card-header">
+    <span class="card-name">Pastel Gradients</span>
+    <span class="card-note">For page backgrounds, section washes, cards, and subtle depth</span>
+  </div>
+  <div class="grad-grid">
+    <div class="grad-item">
+      <div class="grad-swatch grad-swatch-tall" style="background:linear-gradient(160deg,#FFF0EA 0%,#FAF8F4 60%,#E6F7F1 100%);"></div>
+      <div class="grad-info">
+        <div class="grad-name">Morning Wash</div>
+        <div class="grad-use">Full page background — hero to fold. Subtle, barely-there warmth that transitions from blush to cream to mint.</div>
+        <div class="grad-stops">#FFF0EA → #FAF8F4 → #E6F7F1<br>160° linear · 3-stop</div>
+        <span class="grad-tag tag-page">Page background</span>
+      </div>
+    </div>
+    <div class="grad-item">
+      <div class="grad-swatch grad-swatch-tall" style="background:linear-gradient(135deg,#FFF0EA,#FAF8F4);"></div>
+      <div class="grad-info">
+        <div class="grad-name">Blush Fade</div>
+        <div class="grad-use">Hero panel background, quote blocks, about section. Warm but refined — pairs with dark ink text beautifully.</div>
+        <div class="grad-stops">#FFF0EA → #FAF8F4<br>135° linear</div>
+        <span class="grad-tag tag-page">Section · Hero panel</span>
+      </div>
+    </div>
+    <div class="grad-item">
+      <div class="grad-swatch grad-swatch-tall" style="background:linear-gradient(135deg,#E6F7F1,#FAF8F4);"></div>
+      <div class="grad-info">
+        <div class="grad-name">Mint Fade</div>
+        <div class="grad-use">Alternating section backgrounds, process steps, FAQ section. Pairs with jade accent elements.</div>
+        <div class="grad-stops">#E6F7F1 → #FAF8F4<br>135° linear</div>
+        <span class="grad-tag tag-soft">Section · Alternating</span>
+      </div>
+    </div>
+    <div class="grad-item">
+      <div class="grad-swatch grad-swatch-tall" style="background:linear-gradient(135deg,#FFF0EA 0%,#E6F7F1 100%);"></div>
+      <div class="grad-info">
+        <div class="grad-name">Blush to Mint</div>
+        <div class="grad-use">Card backgrounds, tag/badge fills, icon containers. The two pastel tints meeting directly — warm to cool.</div>
+        <div class="grad-stops">#FFF0EA → #E6F7F1<br>135° linear</div>
+        <span class="grad-tag tag-soft">Cards · Icons</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════ MIXED (PASTEL + ACCENT) ══════ -->
+<div class="card">
+  <div class="card-header">
+    <span class="card-name">Mixed Gradients — Pastel to Accent</span>
+    <span class="card-note">Where the soft tints meet the bold colours — for banners, cards, and call-outs</span>
+  </div>
+  <div class="grad-grid">
+    <div class="grad-item">
+      <div class="grad-swatch" style="background:linear-gradient(135deg,#FFF0EA 0%,#FF4D00 100%);"></div>
+      <div class="grad-info">
+        <div class="grad-name">Blush to Signal</div>
+        <div class="grad-use">CTA banners, email headers, highlight cards</div>
+        <div class="grad-stops">#FFF0EA → #FF4D00<br>135° linear</div>
+        <span class="grad-tag tag-bold">Banner · CTA</span>
+      </div>
+    </div>
+    <div class="grad-item">
+      <div class="grad-swatch" style="background:linear-gradient(135deg,#E6F7F1 0%,#00A878 100%);"></div>
+      <div class="grad-info">
+        <div class="grad-name">Mint to Jade</div>
+        <div class="grad-use">Secondary banners, service card headers, process steps</div>
+        <div class="grad-stops">#E6F7F1 → #00A878<br>135° linear</div>
+        <span class="grad-tag tag-soft">Banner · Secondary</span>
+      </div>
+    </div>
+    <div class="grad-item">
+      <div class="grad-swatch" style="background:linear-gradient(160deg,#FFF0EA 0%,#FF8C55 50%,#FF4D00 100%);"></div>
+      <div class="grad-info">
+        <div class="grad-name">Dawn Signal</div>
+        <div class="grad-use">Hero graphic overlays, LinkedIn banners, presentation covers</div>
+        <div class="grad-stops">#FFF0EA → #FF8C55 → #FF4D00<br>160° · 3-stop</div>
+        <span class="grad-tag tag-bold">Graphics · Social</span>
+      </div>
+    </div>
+    <div class="grad-item">
+      <div class="grad-swatch" style="background:linear-gradient(160deg,#E6F7F1 0%,#00C99A 50%,#00A878 100%);"></div>
+      <div class="grad-info">
+        <div class="grad-name">Morning Jade</div>
+        <div class="grad-use">Testimonial backgrounds, about section accent, success messages</div>
+        <div class="grad-stops">#E6F7F1 → #00C99A → #00A878<br>160° · 3-stop</div>
+        <span class="grad-tag tag-soft">Graphics · Testimonial</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════ USAGE IN CONTEXT ══════ -->
+<div class="card">
+  <div class="card-header">
+    <span class="card-name">Gradients in Use</span>
+    <span class="card-note">How they look applied to real UI elements</span>
+  </div>
+
+  <div class="usage-grid">
+
+    <!-- HERO SECTION -->
+    <div class="usage-panel">
+      <div class="usage-label">Hero — Morning Wash background</div>
+      <div class="mock-hero-grad" style="background:linear-gradient(160deg,#FFF0EA 0%,#FAF8F4 60%,#E6F7F1 100%);">
+        <div class="mock-hero-content">
+          <div class="mock-tag"><div class="mock-tag-dot"></div>AI Consulting · Ireland</div>
+          <div class="mock-h-line w100"></div>
+          <div class="mock-h-line w75 accent"></div>
+          <div class="mock-h-line w55"></div>
+          <div class="mock-body-lines">
+            <div class="mock-b-line w85"></div>
+            <div class="mock-b-line w65"></div>
+          </div>
+          <div class="mock-cta">Book a free call →</div>
+        </div>
+      </div>
+      <p style="font-size:0.7rem;color:#aaa;line-height:1.55;">The three-stop pastel gradient creates warmth in the hero without competing with the orange CTA. The blush hints at the Signal brand colour; the mint trails out to Jade.</p>
+    </div>
+
+    <!-- CTA SECTION DARK -->
+    <div class="usage-panel">
+      <div class="usage-label">Dark section — Deep Night background</div>
+      <div class="mock-section-dark" style="background:linear-gradient(135deg,#0f0f0d 0%,#1C3D30 100%);">
+        <div>
+          <div class="mock-section-eyebrow"></div>
+          <div class="mock-section-h w90"></div>
+          <div class="mock-section-h w65" style="background:rgba(0,168,120,0.6);"></div>
+          <div class="mock-cards-row">
+            <div class="mock-mini-card"></div>
+            <div class="mock-mini-card"></div>
+            <div class="mock-mini-card"></div>
+          </div>
+        </div>
+        <div style="display:flex;gap:0.5rem;margin-top:0.75rem;">
+          <div style="height:28px;width:90px;border-radius:6px;background:#FF4D00;"></div>
+          <div style="height:28px;width:70px;border-radius:6px;background:rgba(255,255,255,0.1);"></div>
+        </div>
+      </div>
+      <p style="font-size:0.7rem;color:#aaa;line-height:1.55;">Deep Night blends Ink to a jade-tinted dark, creating depth without pure black. The jade tint in the shadows subtly reinforces the brand without being obvious.</p>
+    </div>
+
+    <!-- CARDS -->
+    <div class="usage-panel">
+      <div class="usage-label">Cards — Blush to Mint icon · Pastel background</div>
+      <div style="display:flex;flex-direction:column;gap:0.6rem;">
+        <div class="mock-card-grad" style="background:linear-gradient(160deg,#FFF0EA,#FAF8F4);">
+          <div class="mock-card-icon-grad" style="background:linear-gradient(135deg,#FFF0EA,#FF4D00);opacity:0.85;"></div>
+          <div class="mock-card-title-line"></div>
+          <div class="mock-card-body-line w80"></div>
+          <div class="mock-card-body-line w55"></div>
+          <div class="mock-card-cta-line" style="background:#FF4D00;opacity:0.6;"></div>
+        </div>
+        <div class="mock-card-grad" style="background:linear-gradient(160deg,#E6F7F1,#FAF8F4);">
+          <div class="mock-card-icon-grad" style="background:linear-gradient(135deg,#E6F7F1,#00A878);opacity:0.85;"></div>
+          <div class="mock-card-title-line"></div>
+          <div class="mock-card-body-line w80"></div>
+          <div class="mock-card-body-line w55"></div>
+          <div class="mock-card-cta-line" style="background:#00A878;opacity:0.6;"></div>
+        </div>
+      </div>
+      <p style="font-size:0.7rem;color:#aaa;line-height:1.55;">Alternating blush and mint card backgrounds signal which colour each service relates to. Keeps the layout varied without adding new colours.</p>
+    </div>
+
+  </div>
+
+  <!-- BUTTONS -->
+  <div class="btn-row">
+    <span class="btn-label">Buttons</span>
+    <button class="btn btn-primary">Book a free call →</button>
+    <button class="btn btn-grad-signal">Get started →</button>
+    <button class="btn btn-secondary">See our services</button>
+    <button class="btn btn-grad-jade">Learn more</button>
+    <button class="btn btn-ghost">Find out more</button>
+    <button class="btn btn-ghost-jade">View services</button>
+    <button class="btn btn-dark">Contact us</button>
+  </div>
+</div>
+
+<!-- ══════ EMAIL SIGNATURE ══════ -->
+<div class="card">
+  <div class="card-header">
+    <span class="card-name">Email Signature Preview</span>
+    <span class="card-note">Blush to Signal gradient header strip</span>
+  </div>
+  <div style="padding:1.75rem 2rem;background:#f5f4f0;display:flex;gap:1.5rem;flex-wrap:wrap;align-items:flex-start;">
+    <div class="mock-email" style="width:280px;flex-shrink:0;">
+      <div class="mock-email-header" style="background:linear-gradient(90deg,#FFF0EA,#FF8C55,#FF4D00);height:4px;"></div>
+      <div class="mock-email-body">
+        <div class="mock-email-name">Your Name</div>
+        <div class="mock-email-role">AI Consultant · AI·Implmnt</div>
+        <div style="display:flex;gap:0.4rem;margin-bottom:0.4rem;">
+          <span style="font-size:0.65rem;color:#FF4D00;">hello@ai-implmnt.com</span>
+          <span style="font-size:0.65rem;color:#ccc;">·</span>
+          <span style="font-size:0.65rem;color:#888;">ai-implmnt.com</span>
+        </div>
+        <div class="mock-email-divider"></div>
+        <div style="display:flex;align-items:center;gap:6px;">
+          <svg width="14" height="14" viewBox="0 0 44 44" fill="none">
+            <line x1="10" y1="34" x2="34" y2="10" stroke="#e0ddd8" stroke-width="1.5"/>
+            <circle cx="10" cy="34" r="6" fill="#FF4D00"/>
+            <circle cx="34" cy="10" r="6" fill="#0f0f0d"/>
+          </svg>
+          <span class="mock-email-logo">AI<span style="color:#FF4D00;">·</span>Implmnt</span>
+        </div>
+      </div>
+    </div>
+    <div style="flex:1;min-width:200px;">
+      <p style="font-size:0.78rem;color:#888;line-height:1.7;">The email signature uses the Dawn Signal gradient as a thin top strip — 4px is enough to brand every email without being distracting. The logo sits cleanly below a divider at the base.</p>
+    </div>
+  </div>
+</div>
+
+<p style="text-align:center;font-size:0.72rem;color:#bbb;padding-bottom:0.5rem;">AI·Implmnt · Theme 2 Signal & Jade · Finalised · ai-implmnt.com</p>
+
+</body>
+</html>

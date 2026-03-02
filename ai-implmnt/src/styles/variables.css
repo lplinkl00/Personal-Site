@@ -1,0 +1,29 @@
+/* ══════════════════════════════════════
+   AI·Implmnt — Design Tokens
+   ══════════════════════════════════════ */
+
+:root {
+  /* ── Brand Colours ── */
+  --signal: #FF4D00;
+  --signal-light: #FF8C55;
+  --jade: #00A878;
+  --jade-light: #00D49A;
+  --ink: #0F0F0D;
+  --cream: #FAF8F4;
+  --blush: #FFF0EA;
+  --mint: #E6F7F1;
+  --slate: #6B6B68;
+  --rule: #E4E0D9;
+
+  /* ── Typography ── */
+  --serif: 'Syne', sans-serif;
+  --sans: 'DM Sans', sans-serif;
+
+  /* ── Spacing ── */
+  --section-pad: 6rem 2.5rem;
+  --section-pad-mobile: 4rem 1.25rem;
+  --max-width: 1100px;
+
+  /* ── Transitions ── */
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+}

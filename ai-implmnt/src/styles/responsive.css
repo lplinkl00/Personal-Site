@@ -1,0 +1,167 @@
+/* ══════════════════════════════════════
+   AI·Implmnt — Responsive Styles
+   ══════════════════════════════════════ */
+
+/* ── Tablet & Mobile ── */
+@media (max-width: 860px) {
+    nav {
+        padding: 0 1.25rem;
+    }
+
+    .nav-links {
+        display: none;
+    }
+
+    .nav-mobile-btn {
+        display: block;
+    }
+
+    section {
+        padding: var(--section-pad-mobile);
+    }
+
+    .cta-section {
+        padding: var(--section-pad-mobile);
+    }
+
+    /* Hero */
+    .hero {
+        padding: 100px 1.25rem 4rem;
+        min-height: auto;
+    }
+
+    .hero-inner {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+
+    .hero-right {
+        display: none;
+    }
+
+    .hero-h1 {
+        font-size: clamp(2rem, 7vw, 3rem);
+    }
+
+    /* Problem */
+    .problem-grid {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+    }
+
+    /* Services */
+    .tier1-inner {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        padding: 2rem 1.75rem;
+    }
+
+    .tier1-right {
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .tiers-row {
+        grid-template-columns: 1fr;
+    }
+
+    /* How it works */
+    .how-steps {
+        grid-template-columns: 1fr 1fr;
+        gap: 2rem;
+    }
+
+    .how-steps::before {
+        display: none;
+    }
+
+    /* About */
+    .about-inner {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        text-align: center;
+    }
+
+    .about-tags {
+        justify-content: center;
+    }
+
+    /* FAQ */
+    .faq-grid {
+        grid-template-columns: 1fr;
+    }
+
+    /* Footer */
+    .footer-inner {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-links {
+        align-items: flex-start;
+    }
+}
+
+/* ── Small Mobile ── */
+@media (max-width: 480px) {
+    .hero {
+        padding: 90px 1rem 3rem;
+    }
+
+    .hero-h1 {
+        font-size: 1.75rem;
+    }
+
+    .hero-sub {
+        font-size: 0.95rem;
+    }
+
+    .hero-actions {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .hero-trust {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
+
+    .trust-dot {
+        display: none;
+    }
+
+    .tier1-inner {
+        padding: 1.5rem 1.25rem;
+    }
+
+    .tier1-price {
+        font-size: 2.5rem;
+    }
+
+    .tier1-right {
+        flex-direction: column;
+    }
+
+    .how-steps {
+        grid-template-columns: 1fr;
+    }
+
+    .about-photo {
+        width: 140px;
+        height: 140px;
+    }
+
+    .cta-section-actions {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .usp-banner {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    footer {
+        padding: 2rem 1rem 1.5rem;
+    }
+}
