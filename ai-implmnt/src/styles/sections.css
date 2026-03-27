@@ -653,3 +653,26 @@ footer {
     background: linear-gradient(90deg, var(--signal), var(--jade));
     border-radius: 2px;
 }
+
+/* ── Footer legal links ── */
+.footer-legal-links {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.footer-legal-link {
+    font-size: 0.72rem;
+    color: rgba(255, 255, 255, 0.2);
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.footer-legal-link:hover {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.footer-legal-sep {
+    font-size: 0.72rem;
+    color: rgba(255, 255, 255, 0.12);
+}
