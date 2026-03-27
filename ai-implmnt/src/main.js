@@ -10,6 +10,7 @@ import './styles/base.css';
 import './styles/components.css';
 import './styles/sections.css';
 import './styles/responsive.css';
+import './styles/legal.css';
 
 // ── Vercel Speed Insights & Analytics ──
 import { injectSpeedInsights } from '@vercel/speed-insights';
