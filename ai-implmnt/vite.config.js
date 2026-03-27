@@ -6,6 +6,14 @@ export default defineConfig({
   build: {
     outDir: 'dist',
     emptyOutDir: true,
+    rollupOptions: {
+      input: {
+        main: 'index.html',
+        privacy: 'privacy.html',
+        cookies: 'cookies.html',
+        terms: 'terms.html',
+      },
+    },
   },
   server: {
     open: true,
